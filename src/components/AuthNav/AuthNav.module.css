@@ -1,0 +1,28 @@
+.authNav {
+  display: flex;
+  gap: 15px;
+
+  justify-content: center;
+}
+
+.navLink {
+  padding-block: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #2b3b39;
+
+  transition: transform cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: #e7b038;
+  transform: scale(1.05);
+  
+}
+
+.active {
+  color: #e7b038;
+}

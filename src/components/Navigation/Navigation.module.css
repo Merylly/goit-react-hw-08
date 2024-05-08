@@ -1,0 +1,19 @@
+.navMenu {
+  display: flex;
+  gap: 15px;
+
+  justify-content: flex-start;
+}
+
+.navLink {
+  padding-block: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+  
+  color: #2b3b39;
+}
+
+.active {
+  color: #e7b038;
+}

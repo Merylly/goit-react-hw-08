@@ -2,21 +2,24 @@
   display: flex;
   gap: 30px;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  transform: translateY(70px);
+  width: 360px;
+
+  padding: 30px;
+  /* background-color: rgba(59, 84, 90, 0.3); */
+  border-radius: 15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .formItem {
-    position: relative;
 }
 
 .formTitle {
-    position: absolute;
-    transform: translateY(-12px);
-    padding-left: 10px;
-    font-style: italic;
-    font-size: 18px;
+  padding-left: 10px;
+  font-style: italic;
+  font-size: 18px;
 }
 
 .formInput {
@@ -59,10 +62,9 @@
   font-weight: 500;
 }
 
-
 .formButton:hover,
 .formButton:focus {
   color: #e7b038;
   transform: scale(1.05);
-  transition: transform cubic-bezier(0.23, 1, 0.320, 1);
+  transition: transform cubic-bezier(0.23, 1, 0.32, 1);
 }

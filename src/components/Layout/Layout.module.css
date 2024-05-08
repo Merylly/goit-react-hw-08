@@ -1,0 +1,24 @@
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+
+  padding: 30px 150px;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(80, 91, 102, 0.5) 0%,
+      rgba(138, 163, 173, 0.5) 100%
+    ),
+    url("https://images.unsplash.com/photo-1467087027365-0850cec5d188?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  height: 100%;
+
+  background-color: rgba(59, 84, 90, 0.3);
+  border-radius: 30px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.1);
+}

@@ -1,9 +1,12 @@
-
+import HomeInfo from "../components/HomeInfo/HomeInfo";
 
 const HomePage = () => {
+  
   return (
-    <div>HomePage</div>
-  )
-}
+    <div>
+      <HomeInfo />
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;

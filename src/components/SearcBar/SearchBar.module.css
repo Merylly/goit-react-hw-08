@@ -1,0 +1,37 @@
+.searchForm {
+  display: flex;
+  gap: 10px;
+  padding: 30px;
+}
+
+.searchTitle {
+  padding-left: 10px;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.searchInput {
+  display: block;
+  padding: 15px 30px 10px 10px;
+  width: 300px;
+
+  background-color: rgba(59, 84, 90, 0.3);
+
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+  font-size: 16px;
+  font-weight: 400;
+
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #000;
+}
+
+.searchInput:focus {
+  border: 1px solid #e7b038;
+}

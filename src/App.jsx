@@ -1,21 +1,24 @@
 import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { Suspense } from "react";
+
 import HomePage from "./pages/HomePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import LoginPage from "./pages/LoginPage";
-import ContactsPage from "./pages/ContactsPage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import { Suspense } from "react";
+
 import Loader from "./components/Loader/Loader";
 import Layout from "./components/Layout/Layout";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { refreshUser } from "./redux/auth/operations";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
+import { refreshUser } from "./redux/auth/operations";
+
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);

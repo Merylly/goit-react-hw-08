@@ -1,0 +1,48 @@
+.container {
+  padding: 20px;
+  text-align: center;
+  
+
+  background-image: linear-gradient(to bottom, #2b3b39, #000000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+
+  margin-bottom: 30px;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 400;
+
+  margin-bottom: 30px;
+}
+
+.list {
+  margin-bottom: 50px;
+}
+
+.infoItem {
+  margin-bottom: 20px;
+}
+
+.itemTitle {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.itemText {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.loginTitle {
+  font-size: 28px;
+  font-weight: 500;
+  
+}
