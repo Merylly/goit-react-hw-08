@@ -1,6 +1,16 @@
 .contactList {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+
+  flex-direction: column;
+  flex-grow: 1;
+
+  padding-inline: 20px;
+  padding-block: 3px;
+
+  overflow-y: auto;
+  height: calc(100vh - 230px);
+
+  scrollbar-width: thin;
+  scrollbar-color: #5a6b6a rgba(59, 84, 90, 0.1);
 }

@@ -19,41 +19,50 @@ const authSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(login.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = null;
         state.isLoggedIn = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
       .addCase(register.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = null;
         state.isLoggedIn = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = null;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
         state.user = action.payload;
       })
       .addCase(logout.fulfilled, () => {
         return INITAL_STATE;
       })
+
+      .addCase(refreshUser.pending, (state) => {
+        state.isRefreshing = true;
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(refreshUser.rejected, (state, action) => {
+        state.isRefreshing = false;
+        state.isLoading = false;
+        state.isError = action.payload;
+      })
+
       .addMatcher(
-        isAnyOf(
-          register.pending,
-          login.pending,
-          refreshUser.pending,
-          logout.pending
-        ),
+        isAnyOf(register.pending, login.pending, logout.pending),
         (state) => {
           state.isLoading = true;
           state.isError = false;
         }
       )
       .addMatcher(
-        isAnyOf(
-          register.rejected,
-          login.rejected,
-          refreshUser.rejected,
-          logout.rejected
-        ),
+        isAnyOf(register.rejected, login.rejected, logout.rejected),
         (state, action) => {
           state.isLoading = false;
           state.isError = action.payload;

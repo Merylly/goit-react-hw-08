@@ -1,10 +1,10 @@
-
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 
 import css from "./ContactForm.module.css";
+import toast from "react-hot-toast";
 
 const contactsSchema = Yup.object().shape({
   name: Yup.string()
@@ -37,6 +37,14 @@ const ContactForm = () => {
     };
 
     dispatch(addContact(finalContactCard));
+    toast("New contact successfully added.", {
+      style: {
+        padding: "16px",
+        color: "#e7b038",
+        backgroundColor: "rgba(59, 84, 90, 0.3)",
+        fontSize: "18px",
+      },
+    });
   };
 
   return (

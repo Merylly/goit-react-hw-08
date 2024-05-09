@@ -1,13 +1,18 @@
 .contactItem {
-  
   padding: 20px;
-  width: 350px;
+  width: 100%;
+  height: 100px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+
   border: none;
   border-radius: 10px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+  animation: fadeInOpacity 0.5s ease-in-out forwards;
 }
 
 .contactWrapper {
@@ -24,12 +29,6 @@
   font-weight: 400;
 }
 
-/* .deleteButton {
-  padding: 5px 10px;
-  border: 1px solid #686868;
-  border-radius: 5px;
-  height: 30px;
-} */
 .deleteButton {
   display: block;
   padding: 5px 10px;
@@ -49,5 +48,17 @@
 .deleteButton:focus {
   color: #e7b038;
   transform: scale(1.05);
-  transition: transform cubic-bezier(0.23, 1, 0.320, 1);
+  transition: transform cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

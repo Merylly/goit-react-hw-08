@@ -14,6 +14,15 @@
   color: #2b3b39;
 }
 
+.navLink:hover,
+.navLink:focus {
+  color: #e7b038;
+  transform: scale(1.05);
+  
+}
+
 .active {
   color: #e7b038;
 }
+
+

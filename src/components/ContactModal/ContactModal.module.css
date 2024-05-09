@@ -1,0 +1,81 @@
+.modal {
+  position: absolute;
+  top: 400px;
+  left: 400px;
+  right: 400px;
+  bottom: 400px;
+
+  background-color: rgba(126, 144, 146, 0.8);
+  border-radius: 10px;
+
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+  animation: fadeInOpacity 0.5s ease-in-out forwards;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(62, 80, 79, 0.3);
+
+  animation: fadeInOpacityOverlay 0.5s ease-in-out forwards;
+}
+
+.title {
+  padding: 40px 20px;
+  text-align: center;
+  color: #2b3b39;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.button {
+  display: block;
+  padding: 10px 15px;
+
+  background-color: transparent;
+
+  border: none;
+  border-radius: 10px;
+
+  color: #2b3b39;
+}
+
+.icon:hover,
+.icon:focus {
+  fill: #e7b038;
+  transform: scale(1.05);
+  transition: transform cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInOpacityOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

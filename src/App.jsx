@@ -1,13 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { Suspense } from "react";
-
-import HomePage from "./pages/HomePage";
-import RegistrationPage from "./pages/RegistrationPage";
-import LoginPage from "./pages/LoginPage";
-import ContactsPage from "./pages/ContactsPage/ContactsPage";
-import NotFoundPage from "./pages/NotFoundPage";
 
 import Loader from "./components/Loader/Loader";
 import Layout from "./components/Layout/Layout";
@@ -15,6 +9,13 @@ import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 import { refreshUser } from "./redux/auth/operations";
+import { Toaster } from "react-hot-toast";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 function App() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+      <Toaster position="bottom-left" reverseOrder={true} />
     </Layout>
   );
 }

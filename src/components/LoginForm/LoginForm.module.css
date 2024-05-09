@@ -34,6 +34,8 @@
   font-weight: 400;
 
   outline: none;
+
+  animation: slideInFromBottom 0.5s ease-in-out forwards;
 }
 
 .formInput::placeholder {
@@ -57,6 +59,8 @@
   color: #2b3b39;
   font-size: 20px;
   font-weight: 500;
+
+  animation: slideInFromBottom 0.5s ease-in-out forwards;
 }
 
 .formButton:hover,
@@ -64,4 +68,20 @@
   color: #e7b038;
   transform: scale(1.05);
   transition: transform cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.error{
+  color: #e7b038;
+}
+
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

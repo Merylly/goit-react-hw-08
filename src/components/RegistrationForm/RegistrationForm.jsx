@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import css from "./RegistrationForm.module.css";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 const registerUserSchema = Yup.object().shape({
   name: Yup.string()
@@ -28,8 +29,15 @@ const RegistrationForm = () => {
    const dispatch = useDispatch();
 
    const handleSubmit = (values, actions) => {
-     console.log(values);
      dispatch(register(values));
+     toast("Successfull registration.", {
+       style: {
+         padding: "16px",
+         color: "#e7b038",
+         backgroundColor: "rgba(59, 84, 90, 0.3)",
+         fontSize: "18px",
+       },
+     });
      actions.resetForm();
    };
 

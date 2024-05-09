@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import css from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 const loginUserSchema = Yup.object().shape({
   email: Yup.string()
@@ -20,14 +21,33 @@ const FORM_INITIAL_VALUES = {
 };
 
 const LoginForm = () => {
-
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
-    dispatch(login(values));
-    actions.resetForm();
+    dispatch(login(values)).unwrap()
+      .then(() => {
+        toast("Wecome back.", {
+          style: {
+            padding: "16px",
+            color: "#e7b038",
+            backgroundColor: "rgba(59, 84, 90, 0.3)",
+            fontSize: "18px",
+          },
+        });
+        actions.resetForm();
+      })
+      .catch(() => {
+        toast("Wrong email or password.", {
+          style: {
+            padding: "16px",
+            color: "#e7b038",
+            backgroundColor: "rgba(59, 84, 90, 0.3)",
+            fontSize: "18px",
+          },
+        });
+      });
   };
+
   return (
     <Formik
       initialValues={FORM_INITIAL_VALUES}

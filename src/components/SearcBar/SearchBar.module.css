@@ -26,6 +26,8 @@
   font-weight: 400;
 
   outline: none;
+
+  animation: slideInFromBottom 0.5s ease-in-out forwards;
 }
 
 .searchInput::placeholder {
@@ -34,4 +36,16 @@
 
 .searchInput:focus {
   border: 1px solid #e7b038;
+}
+
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
