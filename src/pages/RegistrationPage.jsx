@@ -8,8 +8,8 @@ const RegistrationPage = () => {
 
   return (
     <>
-      <RegistrationForm />
       {isLoading && <Loader />}
+      <RegistrationForm />
     </>
   );
 };

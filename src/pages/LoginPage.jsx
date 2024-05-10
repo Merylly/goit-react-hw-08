@@ -7,8 +7,8 @@ const LoginPage = () => {
   const isLoading = useSelector(selectIsLoading);
   return (
     <div>
-      <LoginForm />
       {isLoading && <Loader />}
+      <LoginForm />
     </div>
   );
 };

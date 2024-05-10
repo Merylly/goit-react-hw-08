@@ -22,15 +22,17 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={css.wrapper}>
-      <div>
-        <ContactForm />
-        <SearchBar />
-      </div>
-      <ContactList />
+    <>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-    </div>
+      <div className={css.wrapper}>
+        <div>
+          <ContactForm />
+          <SearchBar />
+        </div>
+        <ContactList />
+      </div>
+    </>
   );
 };
 
