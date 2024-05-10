@@ -1,10 +1,11 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
+
+import { login } from "../../redux/auth/operations";
 
 import css from "./LoginForm.module.css";
-import { useDispatch } from "react-redux";
-import { login } from "../../redux/auth/operations";
-import toast from "react-hot-toast";
 
 const loginUserSchema = Yup.object().shape({
   email: Yup.string()
@@ -12,7 +13,7 @@ const loginUserSchema = Yup.object().shape({
     .email("You must enter valid email address!"),
   password: Yup.string()
     .required("Password is required!")
-    .min(2, `Your password must be more than 6 characters!`),
+    .min(8, `Password must be more than 7.`),
 });
 
 const FORM_INITIAL_VALUES = {
@@ -24,7 +25,8 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(login(values)).unwrap()
+    dispatch(login(values))
+      .unwrap()
       .then(() => {
         toast("Wecome back.", {
           style: {
@@ -65,6 +67,7 @@ const LoginForm = () => {
           />
           <ErrorMessage className={css.error} component="span" name="email" />
         </label>
+
         <label className={css.formItem}>
           <p className={css.formTitle}>Password</p>
           <Field
@@ -79,6 +82,7 @@ const LoginForm = () => {
             name="password"
           />
         </label>
+        
         <button className={css.formButton} type="submit">
           Log in
         </button>

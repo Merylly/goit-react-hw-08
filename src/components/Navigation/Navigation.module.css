@@ -10,7 +10,7 @@
 
   font-size: 24px;
   font-weight: 700;
-  
+
   color: #2b3b39;
 }
 
@@ -18,11 +18,8 @@
 .navLink:focus {
   color: #e7b038;
   transform: scale(1.05);
-  
 }
 
 .active {
   color: #e7b038;
 }
-
-

@@ -6,7 +6,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 
   border: none;
   border-radius: 10px;
@@ -20,6 +19,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .contactWrapper:not(:last-child) {
   padding-bottom: 5px;
 }
@@ -61,4 +61,3 @@
     transform: scale(1);
   }
 }
-

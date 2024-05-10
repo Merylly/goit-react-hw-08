@@ -1,10 +1,11 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
+
 import { addContact } from "../../redux/contacts/operations";
 
 import css from "./ContactForm.module.css";
-import toast from "react-hot-toast";
 
 const contactsSchema = Yup.object().shape({
   name: Yup.string()
@@ -64,6 +65,7 @@ const ContactForm = () => {
           />
           <ErrorMessage className={css.error} component="p" name="name" />
         </label>
+
         <label className={css.formItem}>
           <p className={css.formTitle}>Number</p>
           <Field
@@ -74,6 +76,7 @@ const ContactForm = () => {
           />
           <ErrorMessage className={css.error} component="p" name="number" />
         </label>
+
         <button className={css.formButton} type="submit">
           Add contact
         </button>

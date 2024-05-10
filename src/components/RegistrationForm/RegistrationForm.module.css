@@ -8,15 +8,15 @@
 }
 
 .formItem {
-    position: relative;
+  position: relative;
 }
 
 .formTitle {
-    position: absolute;
-    transform: translateY(-12px);
-    padding-left: 10px;
-    font-style: italic;
-    font-size: 18px;
+  position: absolute;
+  transform: translateY(-12px);
+  padding-left: 10px;
+  font-style: italic;
+  font-size: 18px;
 }
 
 .formInput {
@@ -63,15 +63,14 @@
   animation: slideInFromBottom 0.5s ease-in-out forwards;
 }
 
-
 .formButton:hover,
 .formButton:focus {
   color: #e7b038;
   transform: scale(1.05);
-  transition: transform cubic-bezier(0.23, 1, 0.320, 1);
+  transition: transform cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.error{
+.error {
   color: #e7b038;
 }
 

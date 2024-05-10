@@ -14,13 +14,13 @@ const ContactModal = ({ name, isModalOpen, closeModal, onDeleteContact }) => {
       isOpen={isModalOpen}
       onRequestClose={closeModal}
     >
-      <h2 className={css.title}>
-        Are you sure you want to delete {name}?
-      </h2>
+      <h2 className={css.title}>Are you sure you want to delete {name}?</h2>
+
       <div className={css.wrapper}>
         <button className={css.button} type="button" onClick={onDeleteContact}>
           <FaRegThumbsUp color="#2b3b39" size="30px" className={css.icon} />
         </button>
+
         <button className={css.button} type="button" onClick={closeModal}>
           <FaRegThumbsDown color="#2b3b39" size="30px" className={css.icon} />
         </button>

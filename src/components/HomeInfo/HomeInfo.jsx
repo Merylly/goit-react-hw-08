@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
+
 import AuthNav from "../AuthNav/AuthNav";
-import css from "./HomeInfo.module.css";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
+
+import css from "./HomeInfo.module.css";
 
 const HomeInfo = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

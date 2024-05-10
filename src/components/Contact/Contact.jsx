@@ -1,11 +1,12 @@
 import { BiSolidUser, BiSolidPhone } from "react-icons/bi";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
-
-import css from "./Contact.module.css";
 import toast from "react-hot-toast";
 import { useState } from "react";
+
+import { deleteContact } from "../../redux/contacts/operations";
 import ContactModal from "../ContactModal/ContactModal";
+
+import css from "./Contact.module.css";
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -39,14 +40,17 @@ const Contact = ({ contact }) => {
           <BiSolidUser size="25" color="#2b3b39" />
           <p className={css.contactText}>{contact.name}</p>
         </div>
+
         <div className={css.contactWrapper}>
           <BiSolidPhone size="25" color="#2b3b39" />
           <p className={css.contactText}>{contact.number}</p>
         </div>
       </div>
+
       <button className={css.deleteButton} type="button" onClick={openModal}>
         Delete
       </button>
+
       <ContactModal
         name={contact.name}
         isModalOpen={isModalOpen}

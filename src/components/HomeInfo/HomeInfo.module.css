@@ -1,13 +1,12 @@
 .container {
   padding: 20px;
   text-align: center;
-  
 
   background-image: linear-gradient(to bottom, #2b3b39, #000000);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  
+
   animation: fadeInOpacity 1s ease-in-out forwards;
 }
 
@@ -46,7 +45,6 @@
 .loginTitle {
   font-size: 28px;
   font-weight: 500;
-  
 }
 
 @keyframes fadeInOpacity {

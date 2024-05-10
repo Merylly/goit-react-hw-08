@@ -5,7 +5,7 @@ import Loader from "../components/Loader/Loader";
 
 const RegistrationPage = () => {
   const isLoading = useSelector(selectIsLoading);
-  
+
   return (
     <>
       <RegistrationForm />
